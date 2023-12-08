@@ -1,0 +1,96 @@
+[
+  {
+    "name": "The Crownlands",
+    "house": "Targaryen",
+    "area": 130148,
+    "continent": "Westeros",
+    "settlements": [
+      {
+        "city": "King's Landing",
+        "population": 1500000,
+        "sigil": "Three Headed Dragon"
+      }
+    ]
+
+  },
+  {
+    "name": "The North",
+    "house": "Stark",
+    "area": 1132154,
+    "continent": "Westeros",
+    "settlements": [
+      {
+        "city": "Winterfell",
+        "population": 1000000,
+        "sigil": "Grey Direwolf"
+      }
+    ]
+  },
+  {
+    "name": "The West",
+    "house": "Lannister",
+    "area": 192720,
+    "continent": "Westeros",
+    "settlements": [
+      {
+        "city": "Lannisport",
+        "population": 20000,
+        "sigil": "Golden Lion"
+      },
+      {
+        "city": "Castamere",
+        "population": 0,
+        "sigil":"Red Lion"
+      }
+    ]
+  },
+  {
+    "name": "The Free Cities",
+    "house": "Valyria",
+    "area": 1204450,
+    "continent": "Essos",
+    "settlements": [
+      {
+        "city": "Braavos",
+        "population": 800000,
+        "sigil": "Two Golden Triangles"
+      },
+      {
+        "city": "Pentos",
+        "population": 500000,
+        "sigil": "Golden Tower"
+      }
+    ]
+  },
+  {
+    "name": "Zamoyos",
+    "house": "Ghiscari",
+    "area": 970020,
+    "continent": "Sothoryos",
+    "settlements": [
+      {
+        "city": "Zamettar",
+        "population": 0,
+        "sigil": "Jungle Tree"
+      }
+    ]
+  },
+  {
+    "name": "The Wall",
+    "house": "Night's Watch",
+    "area": 582,
+    "continent": "Lands of Always Winter",
+    "settlements": [
+      {
+        "city": "Castle Black",
+        "population": 600,
+        "sigil": "Black Shield"
+      },
+      {
+        "city": "Shadow Tower",
+        "population": 200,
+        "sigil": "Black Shield"
+      }
+    ]
+  }
+]
