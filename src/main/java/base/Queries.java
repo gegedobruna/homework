@@ -16,14 +16,14 @@ import java.util.Set;
  */
 public interface Queries<T, U, V extends Enum<V>> {
     /**
-     * Returns the greatest (maximum) value of area.
+     * Gets the maximum area among all regions.
      *
-     * @return the maximum of area
+     * @return The maximum area of any region.
      */
     int getMaximumOfArea();
 
     /**
-     * Returns the list of Regions ordered by:
+     * Gets the list of Regions ordered by:
      *
      * <ol>
      *     <li>the area of the region (descending)
@@ -38,31 +38,32 @@ public interface Queries<T, U, V extends Enum<V>> {
     List<Regions> getRegionsOrderBySizeThenByHouseThenByName();
 
     /**
-     * Returns the name of each Region that belongs to a continent.
+     * Retrieves the names of regions in a specific continent.
      *
-     * @param continent the continent
-     * @return the names
+     * @param continent The continent for which to retrieve region names.
+     * @return A set of region names in the specified continent.
      */
     Set<String> getNamesOfRegionsByContinents(@NonNull V continent);
 
     /**
-     * Returns a dictionary that maps the name of each house to its continent.
+     * Provides a mapping of houses to continents for all regions.
      *
-     * @return the dictionary
+     * @return A map where keys are house names, and values are corresponding continents.
      */
     Map<String, V> getHouseByContinent();
 
     /**
-     * Returns a Map with continents as keys and Sets of settlements as values.
+     * Obtains a mapping of continents to sets of settlements for all regions.
      *
-     * @return The generated Map.
+     * @return A map where keys are continent names, and values are sets of settlements in those continents.
      */
     Map<String, Set<U>> getSettlementsByContinent();
 
     /**
-     * Returns a dictionary which maps each continent to the corresponding house, then each house to the corresponding name of the region.
+     * Creates a dictionary which maps each continent to the corresponding house, then each house to the corresponding name of the region.
      *
-     * @return The generated Map with String keys and Map values
+     * @return A map where the outer key is continent name, the middle key is house name,
+     *         and the inner set contains region names for the respective continent and house.
      */
     Map<String, Map<String, Set<String>>> getHouseByContinentAndName();
 }

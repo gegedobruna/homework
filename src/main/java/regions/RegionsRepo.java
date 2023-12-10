@@ -7,7 +7,12 @@ import lombok.NonNull;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The {@code RegionsRepo} class is a repository for managing regions and implements queries
+ * defined in the {@link Queries} interface for retrieving information about regions, settlements, and continents.
+ */
 public class RegionsRepo extends Repository<Regions> implements Queries<Regions, Regions.Settlements, Regions.Continent> {
+
     public RegionsRepo() throws IOException {
         super(Regions.class);
     }
@@ -56,7 +61,9 @@ public class RegionsRepo extends Repository<Regions> implements Queries<Regions,
 
         for (Regions region : getAll()) {
             String continent = region.getContinent().toString();
-            result.putIfAbsent(continent, new HashSet<>());
+            if (!result.containsKey(continent)) {
+                result.put(continent, new HashSet<>());
+            }
             result.get(continent).addAll(region.getSettlements());
         }
 
@@ -66,25 +73,20 @@ public class RegionsRepo extends Repository<Regions> implements Queries<Regions,
     @Override
     public Map<String, Map<String, Set<String>>> getHouseByContinentAndName() {
         Map<String, Map<String, Set<String>>> result = new HashMap<>();
-
         for (Regions region : getAll()) {
-            String continent = region.getContinent().toString();
+            String continent = region.getContinent().name();
             String house = region.getHouse();
-
+            String name = region.getName();
             if (!result.containsKey(continent)) {
                 result.put(continent, new HashMap<>());
             }
-
             if (!result.get(continent).containsKey(house)) {
                 result.get(continent).put(house, new HashSet<>());
             }
-
-            result.get(continent).get(house).add(region.getName());
+            result.get(continent).get(house).add(name);
         }
 
         return result;
     }
-
-
 
 }
