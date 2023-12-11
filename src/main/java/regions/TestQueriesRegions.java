@@ -4,11 +4,9 @@ package regions;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * The main class for testing region queries.
- */
+/** The main class for testing region queries. */
 public class TestQueriesRegions {
-    /** Prints a separator line. */
+    /** Prints a separator line so that each method is clearly and individually displayed. */
     private static void printSeparator() {
         System.out.println("//////////////////////////////////////////////////////////////");
     }
@@ -106,17 +104,18 @@ class TestQueriesRegionsPrinter {
 
         for (Map.Entry<String, Map<String, Set<String>>> continentEntry : houseByContinentAndName.entrySet()) {
             String continent = continentEntry.getKey();
-            Map<String, Set<String>> houseMap = continentEntry.getValue();
-            System.out.println("Continent: " + continent);
+            Map<String, Set<String>> houseByRegion = continentEntry.getValue();
 
-            for (Map.Entry<String, Set<String>> houseEntry : houseMap.entrySet()) {
+            System.out.println("Continent " + continent + " contains the following house(s): ");
+
+            for (Map.Entry<String, Set<String>> houseEntry : houseByRegion.entrySet()) {
                 String house = houseEntry.getKey();
                 Set<String> regions = houseEntry.getValue();
 
-                System.out.println("  House: " + house);
-                System.out.println("    Regions: " + String.join(", ", regions));
-            }
-            System.out.println("--------------");
+                System.out.println("    House: " + house);
+                System.out.println("        Regions: " + regions);
+                }
+            System.out.println("------------");
+        }
     }
-}
 }
